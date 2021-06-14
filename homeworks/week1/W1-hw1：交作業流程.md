@@ -4,7 +4,7 @@
 2. 複製自己 mtr05 的倉庫的網址後，到自己本地選擇一個資料夾使用 `git clone` **初始化環境**
 3. 使用 `git branch w1hw` 來**新增一個 branch**
 4. 新增 hw1~5 的檔案開始寫作業
-5. 寫完將新增的檔案用 `git add .` 一次全部**加入版本控制**
+5. 寫完將新增的檔案用 `git add .` 一次全部**加入版本控制**(但只限於當前位置及其所有後代目錄中未加入版控的檔案)
 6. 再用 `git commit -am 'xxxxx'` **完成作業的版本建立**
 7. 使用 `git push origin w1hw` **將作業 push 到遠端的 github 上**
 8. 到自己的 repository，**發起 pull request**
