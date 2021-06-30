@@ -26,35 +26,64 @@ node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 
 */
 
+// 寫法1
+// 也可以改成將判斷式裡面要做的事情做成 function，看起來比較不會那麼冗長
 const request = require('request')
-const process = require('process')
+// const process = require('process')  (不需要 require 也可以用，因為本來就是 node.js 內建的套件)
 
 if (process.argv[2] === 'list') {
-  request('https://lidemy-book-store.herokuapp.com/books?_limit=20', (error, response, body) => {
-    const json = JSON.parse(body)
-    for (let i = 0; i <= 19; i++) {
-      console.log(json[i].id, json[i].name)
+  request('https://lidemy-book-store.herokuapp.com/books?_limit=20',
+    (error, response, body) => {
+      if (error) {
+        console.log('error:', error)
+        return
+      }
+
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
+      }
+
+      for (let i = 0; i <= 19; i++) {
+        console.log(json[i].id, json[i].name)
+      }
     }
-  })
-}
+  )
+} else if (process.argv[2] === 'read') {
+  request(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
+    (error, response, body) => {
+      if (error) {
+        console.log('error:', error)
+        return
+      }
 
-if (process.argv[2] === 'read') {
-  /* eslint-disable-next-line */
-  request('https://lidemy-book-store.herokuapp.com/books/' + process.argv[3], (error, response, body) => {
-    const json = JSON.parse(body)
-    console.log('id:', json.id)
-    console.log('name:', json.name)
-  })
-}
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
+      }
 
-if (process.argv[2] === 'delete') {
-  /* eslint-disable-next-line */
-  request.delete('https://lidemy-book-store.herokuapp.com/books/' + process.argv[3], (error, response, body) => {
-    console.log(response.statusCode)
-  })
-}
+      console.log('id:', json.id)
+      console.log('name:', json.name)
+    }
+  )
+} else if (process.argv[2] === 'delete') {
+  request.delete(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
+    (error, response, body) => {
+      if (error) {
+        console.log('error:', error)
+        return
+      }
 
-if (process.argv[2] === 'create') {
+      console.log(response.statusCode)
+    }
+  )
+} else if (process.argv[2] === 'create') {
   request.post(
     {
       url: 'https://lidemy-book-store.herokuapp.com/books/',
@@ -64,26 +93,159 @@ if (process.argv[2] === 'create') {
     },
     (error, response, body) => {
       console.log('statusCode:', response.statusCode)
-      const json = JSON.parse(body)
+      if (error) {
+        console.log('error:', error)
+        return
+      }
+
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
+      }
+
       console.log('id:', json.id)
       console.log('name:', json.name)
     }
   )
-}
-
-if (process.argv[2] === 'update') {
+} else if (process.argv[2] === 'update') {
   request.patch(
-    { /* eslint-disable-next-line */
-      url: 'https://lidemy-book-store.herokuapp.com/books/'+ process.argv[3],
+    {
+      url: `https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       form: {
         name: process.argv[4]
       }
     },
     (error, response, body) => {
       console.log('statusCode:', response.statusCode)
-      const json = JSON.parse(body)
+      if (error) {
+        console.log('error:', error)
+        return
+      }
+
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
+      }
+
       console.log('id:', json.id)
       console.log('name:', json.name)
     }
   )
+} else {
+  // 此為作業檢討中提到的優化部分，用來處理當輸入的指令都對不上時的狀況
+  console.log('輸入的指令錯誤，僅能使用 list, read, delete, create, update 的操作指令')
 }
+
+/*
+Huli 作業 example 寫法(switch case + function 寫法＆自行加上 JSON 格式的錯誤處理)
+
+const request = require('request')
+
+const args = process.argv
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com'
+
+const action = args[2]
+const params = args[3]
+
+switch (action) {
+  case 'list':
+    listBooks()
+    break
+  case 'read':
+    readBook(params)
+    break
+  case 'delete':
+    deleteBook(params)
+    break
+  case 'create':
+    createBook(params)
+    break
+  case 'update':
+    updateBook(params, args[4])
+    break
+  default:
+    console.log('Available commands: list, read, delete, create and update')
+}
+
+function listBooks() {
+  request(`${API_ENDPOINT}/books?_limit=20`, (err, res, body) => {
+    if (err) {
+      return console.log('抓取失敗', err)
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
+    for (let i = 0; i < data.length; i += 1) {
+      console.log(`${data[i].id} ${data[i].name}`)
+    }
+  })
+}
+
+function readBook(id) {
+  request(`${API_ENDPOINT}/books/${id}`, (err, res, body) => {
+    if (err) {
+      return console.log('抓取失敗', err)
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
+    console.log(data)
+  })
+}
+
+function deleteBook(id) {
+  request.delete(`${API_ENDPOINT}/books/${id}`, (err, res, body) => {
+    if (err) {
+      return console.log('刪除失敗', err)
+    }
+    console.log('刪除成功！')
+  })
+}
+
+function createBook(name) {
+  request.post({
+    url: `${API_ENDPOINT}/books`,
+    form: {
+      name
+    }
+  }, (err, res) => {
+    if (err) {
+      return console.log('新增失敗', err)
+    }
+    console.log('新增成功！')
+  })
+}
+
+function updateBook(id, name) {
+  request.patch({
+    url: `${API_ENDPOINT}/books/${id}`,
+    form: {
+      name
+    }
+  }, (err, res) => {
+    if (err) {
+      return console.log('更新失敗', err)
+    }
+    console.log('更新成功！')
+  })
+}
+
+*/
