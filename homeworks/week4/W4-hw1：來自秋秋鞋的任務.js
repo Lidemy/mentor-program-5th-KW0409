@@ -29,9 +29,38 @@ node hw1.js
 
 const request = require('request')
 
+/*
+錯誤寫法
+
 request('https://lidemy-book-store.herokuapp.com/books?_limit=10', (error, response, body) => {
+  // 不應該直接對拿到的 response 做 JSON.parse，因為若是 response 不是合法的 JSON 字串就會回傳錯誤(因此也要做錯誤處理)
   const data = JSON.parse(body)
+  // 迴圈的次數，應該要用 data.length，因為沒辦法確保 API 一定會回傳 10 筆資料又或者若 API 出問題，資料多傳/少傳的話就會出錯
+  // 未做錯誤處理的步驟
   for (let i = 0; i <= 9; i++) {
+    // 參數改成 template literal 的形式會比較好維護
     console.log(data[i].id, data[i].name)
+  }
+})
+
+*/
+// 正確寫法
+
+request('https://lidemy-book-store.herokuapp.com/books?_limit=10', (error, response, body) => {
+  if (error) {
+    console.log('error:', error)
+    return
+  }
+
+  let data
+  try {
+    data = JSON.parse(body)
+  } catch (error) {
+    console.log(error)
+    return
+  }
+
+  for (let i = 0; i < data.length; i++) {
+    console.log(`${data[i].id} ${data[i].name}`)
   }
 })

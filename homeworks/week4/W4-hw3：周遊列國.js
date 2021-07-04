@@ -33,13 +33,28 @@ node hw3.js tai
 */
 
 const request = require('request')
-const process = require('process')
-/* eslint-disable-next-line */
-request('https://restcountries.eu/rest/v2/name/' + process.argv[2], (error, response, body) => {
-  if (response.statusCode === 404) {
-    console.log('找不到國家資訊')
-  } else {
-    const json = JSON.parse(body)
+// const process = require('process') (不需要 require 也可以用，因為本來就是 node.js 內建的套件)
+
+request(`https://restcountries.eu/rest/v2/name/${process.argv[2]}`,
+  (error, response, body) => {
+    if (error) {
+      console.log(error)
+      return
+    }
+
+    if (response.statusCode === 404) {
+      console.log('找不到國家資訊')
+      return
+    }
+
+    let json
+    try {
+      json = JSON.parse(body)
+    } catch (error) {
+      console.log(error)
+      return
+    }
+
     for (let i = 0; i < json.length; i++) {
       console.log('============')
       console.log('國家：', json[i].name)
@@ -48,4 +63,39 @@ request('https://restcountries.eu/rest/v2/name/' + process.argv[2], (error, resp
       console.log('國碼：', json[i].callingCodes[0])
     }
   }
+)
+
+/*
+Huli 作業 example 寫法
+
+const request = require('request');
+const args = process.argv;
+const API_ENDPOINT = 'https://restcountries.eu/rest/v2';
+
+const name = args[2];
+
+// 此處是不好的寫法，因為照理來說，只有在 function 裏面可以用 return，這邊可以用是因為在 node.js 的環境下(browser 上就不行)，這一整個程式碼會被 node.js 包成一個 function 來執行，所以才不會出錯(但是有開 eslint 的狀態下， eslint 會認爲是錯誤，因為 eslint 不知道可以這樣寫)，不然就是要自己把程式碼包成一個 function，這樣 eslint 就不會顯示錯誤
+
+if (!name) {
+  return console.log('請輸入國家名稱');
+}
+
+request(`${API_ENDPOINT}/name/${name}`, (err, res, body) => {
+  if (err) {
+    return console.log('抓取失敗', err);
+  }
+  const data = JSON.parse(body);
+  if (data.status === 404) {
+    return console.log('找不到國家資訊')
+  }
+
+  for (let i = 0; i < data.length; i++) {
+    console.log('============')
+    console.log('國家：' + data[i].name);
+    console.log('首都：' + data[i].capital);
+    console.log('貨幣：' + data[i].currencies[0].code);
+    console.log('國碼：' + data[i].callingCodes[0]);
+  }
 })
+
+*/
