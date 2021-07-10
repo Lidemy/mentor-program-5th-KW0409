@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./W6-hw2：活動報名表style.css">
+</head>
+<body>
+  <div class="web__background-area">
+    <form class="web__body">
+      <div class="form__body">
+        <div class="form__top"></div>
+        <div class="form__title">
+          <div class="form__title-text">新拖延運動報名表單</div>
+        </div>
+        <div class="form__info">
+          <div class="form__info-text1">
+            活動日期：2020/12/10 ~ 2020/12/11<br>
+            活動地點：台北市大安區新生南路二段1號
+          </div>
+          <div class="form__info-text2">* 必填</div>
+        </div>
+        <div class="form__body-name">
+          <label for="name">暱稱 <span>*</span></label><br><!--
+          --><input type="text" name="nickname" id="name" placeholder="您的回答" onfocus="this.placeholder=''" onblur="this.placeholder='您的回答'">
+        </div>
+        <div class="form__body-mail">
+          <label for="mail">電子郵件 <span>*</span></label><br><!--
+          --><input type="email" name="email" id="mail" placeholder="您的電子郵件" onfocus="this.placeholder=''" onblur="this.placeholder='您的電子郵件'">
+        </div>
+        <div class="form__body-cel">
+          <label for="cel">手機號碼 <span>*</span></label><br><!--
+          --><input type="tel" name="phone_number" id="cel" placeholder="您的手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='您的手機號碼'">
+        </div>
+        <div class="form__body-type">
+          <label for="type1" class="type">報名類型 <span>*</span></label><br><!--
+          --><input type="radio" name="category" id="type1"><label for="type1" class="type1">躺在床上用想像力實作</label><br>
+          <input type="radio" name="category" id="type2"><label for="type2" class="type2">趴在地上滑手機找現成的</label>
+        </div>
+        <div class="form__body-how">
+          <label for="how">怎麼知道這個活動的？ <span>*</span></label><br><!--
+          --><input type="text" name="reason" id="how" placeholder="您的回答" onfocus="this.placeholder=''" onblur="this.placeholder='您的回答'">
+        </div>
+        <div class="form__body-others">
+          <label for="others">其它</label><br><!--
+          --><div class="others-info">對活動的一些建議</div><br><!--
+          --><input type="text" name="advice" id="others" placeholder="您的回答" onfocus="this.placeholder=''" onblur="this.placeholder='您的回答'">
+        </div>
+        <div class="form__button">
+          <input type="submit" value="提交">
+          <div class="form__button-text">請勿通過表單送出您的密碼。</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="web__bottom-area">
+    <div class="web__bottom-text">
+      © 2020 © Copyright. All rights Reserved.
+    </div>
+  </div>
+  
+</body>
+</html>
