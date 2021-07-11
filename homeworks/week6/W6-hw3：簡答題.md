@@ -16,11 +16,23 @@
 
 所謂的盒模型，就是指在 CSS 中，所有的 HTML 元素都會被視為一個盒子模樣的區塊，而我們則可以透過 CSS 去設定每個盒子的外觀及位置
 
-盒模型的組成由外而內可分為
+盒模型的組成由外而內可分為(如下圖)
 ・**margin**（外邊距）
 ・**border**（邊框）
 ・**padding**（內邊距）
-・**content**（內容）
+・**content**（內容)
+<img width="50%" src="https://user-images.githubusercontent.com/80152099/125187233-1d86a300-e261-11eb-8d6d-ccd6b6e798a8.png">
+
+<br>
+
+可以看到每一個 HTML 的元素都是由這四個區塊所組成的
+而為了讓我們在設定 HTML 的 width, height 時，不需要再去特別計算要扣掉或加上 padding 或 margin
+我們可以使用 **`box-sizing`** 這個屬性來設定盒模型的長寬計算方式
+
+1. **`box-sizing: content-box`** (此為預設模式) => 此模式下，我們設定的長寬會是單指 content 的長寬，不包括其他三個區塊
+2. **`box-sizing: border-box`** => 此模式下，我們設定的長寬會是泛指直到 border 的長寬，但不包括 margin，因此 content 的長寬，就會是我們所設定的長寬剪掉 padding, margin 的長寬後的值
+
+<br>
 
 #### 3. 請問 display:inline,block 跟 inline-block 的差別是什麼？什麼時機點會用到？
 
