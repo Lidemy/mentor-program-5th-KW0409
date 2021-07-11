@@ -1,0 +1,715 @@
+body {
+  margin: 0px;
+}
+
+div.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  background-color: #ffffff;
+}
+
+div.navbar {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.web__top {
+  max-width: 1920px;
+  height: 84px;
+  padding: 0px 96px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.just-a-bite {
+  font-family: Questrial;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #489846;
+  cursor: pointer;
+}
+
+.nav-1 {
+  margin-right: 25px;
+  padding: 13px 25px 14px;
+  font-family: 微軟正黑;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
+}
+
+.nav-2 {
+  margin-right: 25px;
+  padding: 13px 25px 14px;
+  font-family: 微軟正黑;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
+}
+
+.nav-3 {
+  margin-right: 25px;
+  padding: 13px 25px 14px;
+  font-family: 微軟正黑;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
+}
+
+.nav-4 {
+  padding: 13px 25px 14px;
+  font-family: 微軟正黑;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
+}
+
+span.nav a:hover {
+  background: #ff7286;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .web__top {
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .just-a-bite {
+    margin-top: 25px;
+  }
+
+  span.nav {
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  span.nav a {
+    flex: 1;
+    margin: 0;
+  }
+
+  span.nav a:hover {
+    border-radius: 0;
+  }
+}
+
+.web__body {
+  max-width: 1920px;
+  min-height: 1169px;
+  margin: 0 auto;
+}
+
+.web__body-title {
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.web__body-title-color {
+  width: 15px;
+  height: 38px;
+  background-color: #a3dea2;
+}
+
+.web__body-title-text {
+  margin-left: 15px;
+  font-family: 微軟正黑;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+@media (max-width: 500px) {
+  .web__body-title-color {
+    width: 12px;
+    height: 30px;
+  }
+
+  .web__body-title-text {
+    font-size: 30px;
+  }
+}
+
+.web__body-q1-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q1-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q1-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q1-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q1-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q1-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+.hide {
+  display: none;
+}
+
+.web__body-q2-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q2-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q2-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q2-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q2-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q2-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+.web__body-q3-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q3-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q3-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q3-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q3-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q3-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+.web__body-q4-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q4-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q4-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q4-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q4-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q4-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+.web__body-q5-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q5-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q5-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q5-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q5-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q5-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+.web__body-q6-area {
+  max-width: 810px;
+  min-height: 75px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  border-bottom: 1px solid #a6e2c0;
+}
+
+.web__body-q6-title {
+  padding-top: 28px;
+  padding-left: 17px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.web__body-q6-title:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.q6-title1 {
+  font-family: Questrial;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.q6-title2 {
+  font-family: 微軟正黑;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.web__body-q6-text {
+  max-width: 700px;
+  margin: 0px 20px 45px 68px;
+  background: rgba(225, 240, 245, 0.8);
+  border: 15px solid rgba(225, 240, 245, 0.8);
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: 0.14px;
+  text-align: left;
+  word-break: initial;
+  color: #000000;
+}
+
+@media (max-width: 500px) {
+  .q1-title1 {
+    font-size: 24px;
+  }
+
+  .q1-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q1-text {
+    font-size: 16px;
+  }
+
+  .q2-title1 {
+    font-size: 24px;
+  }
+
+  .q2-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q2-text {
+    font-size: 16px;
+  }
+
+  .q3-title1 {
+    font-size: 24px;
+  }
+
+  .q3-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q3-text {
+    font-size: 16px;
+  }
+
+  .q4-title1 {
+    font-size: 24px;
+  }
+
+  .q4-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q4-text {
+    font-size: 16px;
+  }
+
+  .q5-title1 {
+    font-size: 24px;
+  }
+
+  .q5-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q5-text {
+    font-size: 16px;
+  }
+
+  .q6-title1 {
+    font-size: 24px;
+  }
+
+  .q6-title2 {
+    font-size: 20px;
+  }
+
+  .web__body-q6-text {
+    font-size: 16px;
+  }
+}
+
+.web__bottom-info {
+  min-height: 190px;
+  padding: 35px 106px;
+  background-color: #e8efee;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.web__bottom-info-text1 {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2em;
+  letter-spacing: normal;
+  text-align: left;
+  margin-top: 10px;
+  color: #484848;
+}
+
+.web__bottom-info-text2-1 {
+  font-family: Questrial;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  margin-right: 3px;
+  color: #489846;
+}
+
+.web__bottom-info-text2-2 {
+  margin-top: 15px;
+  font-family: Questrial;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #484848;
+}
+
+@media (max-width: 680px) {
+  .web__bottom-info {
+    flex-direction: column-reverse;
+    padding: 35px;
+  }
+
+  .web__bottom-info-text2 {
+    margin-bottom: 25px;
+  }
+
+  .web__bottom-info-text2-1 {
+    text-align: center;
+  }
+
+  .web__bottom-info-text2-2 {
+    text-align: center;
+  }
+}
+
+.web__copyright-area {
+  min-height: 48px;
+  background-color: #35564b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.web__copyright-text {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 760px) {
+  .web__copyright-text {
+    font-size: 13px;
+  }
+}
