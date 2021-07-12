@@ -1,0 +1,243 @@
+.List {
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  box-shadow: 2px 3px 6px 0 #cccccc;
+  background: #fffde7;
+}
+
+.List__header-area {
+  height: 120px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: cursive;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: cursive;
+  color: #5e81a5;
+}
+
+.List__input-area {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.List__input {
+  width: 90%;
+  height: 40px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #5e81a5;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #189ba3;
+  background: #fffde7;
+}
+
+.List__input::placeholder {
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Ayuthaya;
+  color: #a9a9a9;
+}
+
+@media (max-width: 450px) {
+  .List__input {
+    width: 85%;
+  }
+
+  .List__input::placeholder {
+    font-size: 18px;
+  }
+}
+
+.List__input-add-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: white;
+  margin-left: 10px;
+  background-color: #00000064;
+  color: #fffde7;
+  font-size: 35px;
+  text-align: center;
+  line-height: 8px;
+}
+
+.List__input-add-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.List__todo-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.List__todo-area {
+  width: 100%;
+  min-height: 60px;
+  border: 3px solid #189ba3;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.List__todo-area-title {
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+.List__todo-area-content {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin: 0 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: 30px;
+  background: #189ba3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.List__todo-area-content-text {
+  width: 85%;
+  font-size: 22px;
+  font-weight: normal;
+  word-break: break-word;
+  white-space: pre-line;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  .List__todo-area-content-text {
+    width: 75%;
+  }
+}
+
+.todo__icon-area {
+  font-size: 22px;
+  font-weight: normal;
+  color: white;
+  display: flex;
+  position: absolute;
+  right: 10px;
+}
+
+.todo__icon-area > .todo__icon-area-check {
+  margin-left: 10px;
+}
+
+.todo__icon-area > .todo__icon-area-trash > i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.todo__icon-area > .todo__icon-area-check > i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.hr {
+  width: 96%;
+  height: 2px;
+  background: #000;
+  border: none;
+}
+
+.List__finished-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.List__finished-area {
+  width: 100%;
+  min-height: 60px;
+  border: 3px solid orange;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.List__finished-area-title {
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+.List__finished-area-content {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin: 0 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: 30px;
+  background: orange;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.List__finished-area-content-text {
+  width: 85%;
+  font-size: 22px;
+  font-weight: normal;
+  word-break: break-word;
+  white-space: pre-line;
+  color: rgb(85, 85, 85);
+}
+
+@media (max-width: 450px) {
+  .List__finished-area-content-text {
+    width: 75%;
+  }
+}
+
+.finished__icon-area {
+  font-size: 22px;
+  font-weight: normal;
+  color: rgb(85, 85, 85);
+  display: flex;
+  position: absolute;
+  right: 10px;
+}
+
+.finished__icon-area > .finished__icon-area-check {
+  margin-left: 10px;
+}
+
+.finished__icon-area > .finished__icon-area-trash > i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.finished__icon-area > .finished__icon-area-check > i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

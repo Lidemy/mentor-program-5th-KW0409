@@ -1,0 +1,550 @@
+body {
+  margin: 0px;
+}
+
+.web__background-area {
+  width: 100%;
+  min-height: 1280px;
+  background: rgb(69, 99, 98, 13%);
+}
+
+.web__body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__body {
+  width: 645px;
+  min-height: 1085px;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+@media (max-width: 680px) {
+  .form__body {
+    width: 375px;
+  }
+}
+
+.form__top {
+  max-width: 645px;
+  height: 8px;
+  border: 3px solid #fad312;
+  background: #fad312;
+  box-sizing: border-box;
+}
+
+.form__title {
+  max-width: 645px;
+  padding: 0 40px;
+  padding-top: 54px;
+  padding-bottom: 25px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+@media (max-width: 680px) {
+  .form__title {
+    padding: 0 20px;
+    padding-top: 54px;
+    padding-bottom: 25px;
+  }
+}
+
+.form__title-text {
+  font-family: 微軟正黑;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  text-align: left;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.form__info {
+  max-width: 645px;
+  height: 130px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.form__info-text1 {
+  font-family: 微軟正黑;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8em;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.form__info-text2 {
+  padding-top: 20px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-name {
+  max-width: 645px;
+  padding: 0 41px;
+  margin-bottom: 32px;
+}
+
+.form__body-name > label {
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-name > label > span {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-name > input {
+  width: 287px;
+  height: 23px;
+  margin-top: 20px;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.form__body-name > input::placeholder {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #afafaf;
+}
+
+.form__body-name > .warning-text {
+  margin-top: 5px;
+  font-family: 微軟正黑;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form__body-mail {
+  max-width: 645px;
+  padding: 0 41px;
+  margin-bottom: 32px;
+}
+
+.form__body-mail > label {
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-mail > label > span {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-mail > input {
+  width: 287px;
+  height: 23px;
+  margin-top: 20px;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.form__body-mail > input::placeholder {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #afafaf;
+}
+
+.form__body-mail > .warning-text {
+  margin-top: 5px;
+  font-family: 微軟正黑;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form__body-cel {
+  max-width: 645px;
+  padding: 0 40px;
+  margin-bottom: 32px;
+}
+
+.form__body-cel > label {
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-cel > label > span {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-cel > input {
+  width: 287px;
+  height: 23px;
+  margin-top: 20px;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.form__body-cel > input::placeholder {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #afafaf;
+}
+
+.form__body-cel > .warning-text {
+  margin-top: 5px;
+  font-family: 微軟正黑;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form__body-type {
+  max-width: 645px;
+  padding: 0 40px;
+  margin-bottom: 32px;
+}
+
+.form__body-type > label.type {
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-type > label > span {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-type > input#type1 {
+  width: 12px;
+  height: 12px;
+  margin: 20px 9px 0px 5px;
+  border: 1px solid #d0d0d0;
+  color: #5d5d5d;
+  box-sizing: border-box;
+}
+
+.form__body-type > label.type1 {
+  font-family: 微軟正黑;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-type > input#type2 {
+  width: 12px;
+  height: 12px;
+  margin: 20px 9px 0px 5px;
+  border: 1px solid #d0d0d0;
+  color: #5d5d5d;
+  box-sizing: border-box;
+}
+
+.form__body-type > label.type2 {
+  font-family: 微軟正黑;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.form__body-type > .warning-text {
+  margin-top: 5px;
+  font-family: 微軟正黑;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form__body-how {
+  max-width: 645px;
+  padding: 0 40px;
+  margin-bottom: 32px;
+}
+
+.form__body-how > label {
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+}
+
+.form__body-how > label > span {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e74149;
+}
+
+.form__body-how > input {
+  width: 287px;
+  height: 23px;
+  margin-top: 19px;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.form__body-how > input::placeholder {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #afafaf;
+}
+
+.form__body-how > .warning-text {
+  margin-top: 5px;
+  font-family: 微軟正黑;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form__body-others {
+  max-width: 645px;
+  padding: 0 40px;
+  margin-bottom: 55px;
+}
+
+.form__body-others > label {
+  margin-bottom: 8px;
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.form__body-others > .others-info {
+  margin-bottom: 24px;
+  font-family: 微軟正黑;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.form__body-others > input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+  box-sizing: border-box;
+}
+
+.form__body-others > input::placeholder {
+  font-family: 微軟正黑;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #afafaf;
+}
+
+.form__button {
+  max-width: 645px;
+  padding: 0 40px;
+  margin-bottom: 45px;
+}
+
+.form__button > input {
+  width: 92px;
+  height: 40px;
+  margin-bottom: 20px;
+  border: 0 white;
+  border-radius: 3px;
+  background: #fad312;
+  text-align: center;
+  font-size: 15px;
+}
+
+.form__button > input:hover {
+  cursor: pointer;
+}
+
+.form__button > .form__button-text {
+  font-family: 微軟正黑;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.web__bottom-area {
+  width: 100%;
+  height: 60px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.web__bottom-text {
+  font-family: 微軟正黑;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #999999;
+}

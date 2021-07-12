@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./W7-hw3：Todo_List_style.css">
+  <link rel='stylesheet' href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+  <div class="List">
+    <div class="List__header-area">
+      Todo List
+    </div>
+    <div class="List__input-area">
+      <input class='List__input' type="text" placeholder="Add something to do here ~ " onfocus="this.placeholder=''" onblur="this.placeholder='Add something to do here ~'">
+      <input class="List__input-add-btn" type="button" value="+">
+    </div>
+    <div class="List__todo-body">
+      <div class="List__todo-area">
+        <div class="List__todo-area-title">
+          待辦事項
+        </div>
+        <div class="List__todo-area-content">
+          <div class="List__todo-area-content-text">test-2</div>
+          <div class="todo__icon-area">
+            <div class="todo__icon-area-trash">
+              <i class="fas fa-trash-alt trash-btn"></i>
+            </div>
+            <div class="todo__icon-area-check">
+              <i class="fas fa-check-circle check-btn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="List__finished-body">
+      <div class="List__finished-area">
+        <div class="List__finished-area-title">
+          完成事項
+        </div>
+        <div class="List__finished-area-content">
+          <div class="List__finished-area-content-text">test-1</div>
+          <div class="finished__icon-area">
+            <div class="finished__icon-area-trash">
+              <i class="fas fa-trash-alt trash-btn"></i>
+            </div>
+            <div class="finished__icon-area-check">
+              <i class="fas fa-check-circle check-btn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./W7-hw3：Todo_List.js"></script>
+</body>
+</html>
