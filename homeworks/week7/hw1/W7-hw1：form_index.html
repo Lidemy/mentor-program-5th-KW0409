@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <div class="web__background-area">
-    <form class="web__body">
+  <div class="background-area">
+    <form class="form__wrapper">
       <div class="form__body">
         <div class="form__top"></div>
         <div class="form__title">
@@ -25,42 +25,49 @@
           </div>
           <div class="form__info-text2">* 必填</div>
         </div>
-        <div class="form__body-name">
+
+        <div class="form__nickname required">
           <label for="name">暱稱 <span>*</span></label><br><!--
-          --><input type="text" name="nickname" id="name" placeholder="您的回答" onfocus="this.placeholder=''"
+          --><input class="text" type="text" name="nickname" id="name" placeholder="您的回答" onfocus="this.placeholder=''"
             onblur="this.placeholder='您的回答'"><br><!--
-          --><span class="warning-text">* 大爺您貴姓啊</span>
+          --><span class="hide-text">* 大爺您貴姓啊</span>
         </div>
-        <div class="form__body-mail">
+
+        <div class="form__mail required">
           <label for="mail">電子郵件 <span>*</span></label><br><!--
-          --><input type="email" name="email" id="mail" placeholder="您的電子郵件" onfocus="this.placeholder=''"
+          --><input class="text" type="email" name="email" id="mail" placeholder="您的電子郵件" onfocus="this.placeholder=''"
             onblur="this.placeholder='您的電子郵件'"><br><!--
-          --><span class="warning-text">* 電子郵件也不寫，太呱張了吧 呱呱</span>
+          --><span class="hide-text">* 電子郵件也不寫，太呱張了吧 呱呱</span>
         </div>
-        <div class="form__body-cel">
+
+        <div class="form__cel required">
           <label for="cel">手機號碼 <span>*</span></label><br><!--
-          --><input type="tel" name="phone_number" id="cel" placeholder="您的手機號碼" onfocus="this.placeholder=''"
+          --><input class="text" type="tel" name="phone_number" id="cel" placeholder="您的手機號碼" onfocus="this.placeholder=''"
             onblur="this.placeholder='您的手機號碼'"><br><!--
-          --><span class="warning-text">* 手機號碼不留，是要我用心電感應逆</span>
+          --><span class="hide-text">* 手機號碼不留，是要我用心電感應逆</span>
         </div>
-        <div class="form__body-type">
+
+        <div class="form__type required">
           <label for="type1" class="type">報名類型 <span>*</span></label><br><!--
           --><input type="radio" name="category" id="type1" value="1"><label for="type1" class="type1">躺在床上用想像力實作</label><br>
           <input type="radio" name="category" id="type2" value="2"><label for="type2" class="type2">趴在地上滑手機找現成的</label><br><!--
-          --><span class="warning-text">* 報名類型都不選，是想騙自己很認真膩</span>
+          --><span class="hide-text">* 報名類型都不選，是想騙自己很認真膩</span>
         </div>
-        <div class="form__body-how">
+
+        <div class="form__how required">
           <label for="how">怎麼知道這個活動的？ <span>*</span></label><br><!--
-          --><input type="text" name="reason" id="how" placeholder="您的回答" onfocus="this.placeholder=''"
+          --><input class="text" type="text" name="reason" id="how" placeholder="您的回答" onfocus="this.placeholder=''"
             onblur="this.placeholder='您的回答'"><br><!--
-          --><span class="warning-text">* 這題還沒寫完就想偷跑啊 方丈表示他很生氣</span>
+          --><span class="hide-text">* 這題還沒寫完就想偷跑啊 方丈表示他很生氣</span>
         </div>
-        <div class="form__body-others">
+
+        <div class="form__others">
           <label for="others">其它</label><br><!--
           --><div class="others-info">對活動的一些建議</div><br><!--
           --><input type="text" name="advice" id="others" placeholder="您的回答" onfocus="this.placeholder=''"
             onblur="this.placeholder='您的回答'">
         </div>
+        
         <div class="form__button">
           <input type="submit" value="提交">
           <div class="form__button-text">請勿通過表單送出您的密碼。</div>
@@ -68,8 +75,8 @@
       </div>
     </form>
   </div>
-  <div class="web__bottom-area">
-    <div class="web__bottom-text">
+  <div class="footer__wrapper">
+    <div class="footer__text">
       © 2020 © Copyright. All rights Reserved.
     </div>
   </div>
