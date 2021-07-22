@@ -1,82 +1,58 @@
 
-const element = document.querySelector('form')
-const inputName = document.querySelector('.form__body-name > input')
-const inputMail = document.querySelector('.form__body-mail > input')
-const inputCel = document.querySelector('.form__body-cel > input')
-const inputType1 = document.querySelector('.form__body-type #type1')
-const inputType2 = document.querySelector('.form__body-type #type2')
-const inputHow = document.querySelector('.form__body-how > input')
-const inputOthers = document.querySelector('.form__body-others > input')
+const form = document.querySelector('form')
+const mustInputs = document.querySelectorAll('.required .text')
+const mustRadios = document.querySelectorAll('.required input[type=radio]')
 
-// 如果輸入框內為空值時
-element.addEventListener('submit', (e) => {
-  if (!inputName.value) {
-    e.preventDefault()
-    document.querySelector('.form__body-name > .warning-text').style.color = 'red'
-    // eval() 會執行() 內的 JS 代碼，也就是執行 inputName.focus() ，讓鼠標聚焦在輸入框
-    inputName.focus()
-  } else if (!inputMail.value) {
-    e.preventDefault()
-    document.querySelector('.form__body-mail > .warning-text').style.color = 'red'
-    inputMail.focus()
-  } else if (!inputCel.value) {
-    e.preventDefault()
-    document.querySelector('.form__body-cel > .warning-text').style.color = 'red'
-    inputCel.focus()
-  } else if (inputType1.checked !== true && inputType2.checked !== true) {
-    e.preventDefault()
-    document.querySelector('.form__body-type > .warning-text').style.color = 'red'
-  } else if (!inputHow.value) {
-    e.preventDefault()
-    document.querySelector('.form__body-how > .warning-text').style.color = 'red'
-    inputHow.focus()
-  } else {
-    let str = ''
-    const type1Text = document.querySelector('.form__body-type .type1').innerText
-    const type2Text = document.querySelector('.form__body-type .type2').innerText
-    if (inputType1.checked === true) {
-      str += type1Text
-    } else if (inputType2.checked === true) {
-      str += type2Text
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  let allFilled = true
+  let minIndex = mustInputs.length
+  const value = {}
+  for (let i = 0; i < mustInputs.length; i++) {
+    value[mustInputs[i].name] = mustInputs[i].value
+    if (!mustInputs[i].value) { // 如果輸入框內為空值時
+      mustInputs[i].parentNode.querySelector('.hide-text').classList.add('warning')
+      allFilled = false
+      if (i < minIndex) { // 聚焦在第一個其值為空的輸入框的效果
+        minIndex = i
+        mustInputs[minIndex].focus()
+      }
+    } else { // 如果輸入框內不為空值時
+      mustInputs[i].parentNode.querySelector('.hide-text').classList.remove('warning')
+    }
+  }
+  if (mustRadios[0].checked !== true && mustRadios[1].checked !== true) {
+    mustRadios[0].parentNode.querySelector('.hide-text').classList.add('warning')
+    allFilled = false
+  }
+
+  if (allFilled) {
+    if (mustRadios[0].checked === true) {
+      value[mustRadios[0].name] = document.querySelector('label.type1').innerText
+    } else if (mustRadios[1].checked === true) {
+      value[mustRadios[1].name] = document.querySelector('label.type1').innerText
+    }
+
+    const inputOthers = document.querySelector('.form__others > input')
+    if (inputOthers.value === '') {
+      value[inputOthers.name] = '未填寫'
+    } else {
+      value[inputOthers.name] = inputOthers.value
     }
 
     alert(`
-     暱稱：${inputName.value}
+    暱稱：${value.nickname}
 
-     電子郵件：${inputMail.value}
+    電子郵件：${value.email}
 
-     手機號碼：${inputCel.value}
+    手機號碼：${value.phone_number}
 
-     報名類型：${str}
+    報名類型：${value.category}
 
-     怎麼知道這個活動的？：${inputHow.value}
+    怎麼知道這個活動的？ ${value.reason}
 
-     其它：${inputOthers.value}
+    其它建議：${value.advice}
 
     `)
-  }
-})
-
-// 如果原本為空的輸入框填寫完
-
-element.addEventListener('submit', (e) => {
-  if (inputName.value) {
-    document.querySelector('.form__body-name > .warning-text').style.color = '#ffffff'
-  }
-
-  if (inputMail.value) {
-    document.querySelector('.form__body-mail > .warning-text').style.color = '#ffffff'
-  }
-
-  if (inputCel.value) {
-    document.querySelector('.form__body-cel > .warning-text').style.color = '#ffffff'
-  }
-
-  if (inputType1.checked === true || inputType2.checked === true) {
-    document.querySelector('.form__body-type > .warning-text').style.color = '#ffffff'
-  }
-
-  if (inputHow.value) {
-    document.querySelector('.form__body-how > .warning-text').style.color = '#ffffff'
   }
 })

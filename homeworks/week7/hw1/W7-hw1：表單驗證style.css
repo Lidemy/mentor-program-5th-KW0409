@@ -2,13 +2,13 @@ body {
   margin: 0px;
 }
 
-.web__background-area {
+.background-area {
   width: 100%;
   min-height: 1280px;
   background: rgb(69, 99, 98, 13%);
 }
 
-.web__body {
+.form__wrapper {
   max-width: 800px;
   margin: 0 auto;
   padding: 100px 0;
@@ -99,13 +99,13 @@ body {
   color: #e74149;
 }
 
-.form__body-name {
+.form__nickname {
   max-width: 645px;
   padding: 0 41px;
   margin-bottom: 32px;
 }
 
-.form__body-name > label {
+.form__nickname > label {
   font-family: 微軟正黑;
   font-size: 20px;
   font-weight: normal;
@@ -118,7 +118,7 @@ body {
   display: inline-block;
 }
 
-.form__body-name > label > span {
+.form__nickname > label > span {
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -129,7 +129,7 @@ body {
   color: #e74149;
 }
 
-.form__body-name > input {
+.form__nickname > input {
   width: 287px;
   height: 23px;
   margin-top: 20px;
@@ -137,7 +137,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-name > input::placeholder {
+.form__nickname > input::placeholder {
   font-family: 微軟正黑;
   font-size: 16px;
   font-weight: normal;
@@ -149,7 +149,7 @@ body {
   color: #afafaf;
 }
 
-.form__body-name > .warning-text {
+.hide-text {
   margin-top: 5px;
   font-family: 微軟正黑;
   font-size: 12px;
@@ -162,13 +162,17 @@ body {
   color: #ffffff;
 }
 
-.form__body-mail {
+.warning {
+  color: red;
+}
+
+.form__mail {
   max-width: 645px;
   padding: 0 41px;
   margin-bottom: 32px;
 }
 
-.form__body-mail > label {
+.form__mail > label {
   font-family: 微軟正黑;
   font-size: 20px;
   font-weight: normal;
@@ -181,7 +185,7 @@ body {
   display: inline-block;
 }
 
-.form__body-mail > label > span {
+.form__mail > label > span {
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -192,7 +196,7 @@ body {
   color: #e74149;
 }
 
-.form__body-mail > input {
+.form__mail > input {
   width: 287px;
   height: 23px;
   margin-top: 20px;
@@ -200,7 +204,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-mail > input::placeholder {
+.form__mail > input::placeholder {
   font-family: 微軟正黑;
   font-size: 16px;
   font-weight: normal;
@@ -212,26 +216,13 @@ body {
   color: #afafaf;
 }
 
-.form__body-mail > .warning-text {
-  margin-top: 5px;
-  font-family: 微軟正黑;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-.form__body-cel {
+.form__cel {
   max-width: 645px;
   padding: 0 40px;
   margin-bottom: 32px;
 }
 
-.form__body-cel > label {
+.form__cel > label {
   font-family: 微軟正黑;
   font-size: 20px;
   font-weight: normal;
@@ -244,7 +235,7 @@ body {
   display: inline-block;
 }
 
-.form__body-cel > label > span {
+.form__cel > label > span {
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -255,7 +246,7 @@ body {
   color: #e74149;
 }
 
-.form__body-cel > input {
+.form__cel > input {
   width: 287px;
   height: 23px;
   margin-top: 20px;
@@ -263,7 +254,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-cel > input::placeholder {
+.form__cel > input::placeholder {
   font-family: 微軟正黑;
   font-size: 16px;
   font-weight: normal;
@@ -275,26 +266,13 @@ body {
   color: #afafaf;
 }
 
-.form__body-cel > .warning-text {
-  margin-top: 5px;
-  font-family: 微軟正黑;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-.form__body-type {
+.form__type {
   max-width: 645px;
   padding: 0 40px;
   margin-bottom: 32px;
 }
 
-.form__body-type > label.type {
+.form__type > label.type {
   font-family: 微軟正黑;
   font-size: 20px;
   font-weight: normal;
@@ -307,7 +285,7 @@ body {
   display: inline-block;
 }
 
-.form__body-type > label > span {
+.form__type > label > span {
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -318,7 +296,7 @@ body {
   color: #e74149;
 }
 
-.form__body-type > input#type1 {
+.form__type > input#type1 {
   width: 12px;
   height: 12px;
   margin: 20px 9px 0px 5px;
@@ -327,7 +305,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-type > label.type1 {
+.form__type > label.type1 {
   font-family: 微軟正黑;
   font-size: 14px;
   font-weight: normal;
@@ -340,7 +318,7 @@ body {
   display: inline-block;
 }
 
-.form__body-type > input#type2 {
+.form__type > input#type2 {
   width: 12px;
   height: 12px;
   margin: 20px 9px 0px 5px;
@@ -349,7 +327,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-type > label.type2 {
+.form__type > label.type2 {
   font-family: 微軟正黑;
   font-size: 14px;
   font-weight: normal;
@@ -363,26 +341,13 @@ body {
   white-space: nowrap;
 }
 
-.form__body-type > .warning-text {
-  margin-top: 5px;
-  font-family: 微軟正黑;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-.form__body-how {
+.form__how {
   max-width: 645px;
   padding: 0 40px;
   margin-bottom: 32px;
 }
 
-.form__body-how > label {
+.form__how > label {
   font-family: 微軟正黑;
   font-size: 20px;
   font-weight: normal;
@@ -395,7 +360,7 @@ body {
   display: inline-block;
 }
 
-.form__body-how > label > span {
+.form__how > label > span {
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -406,7 +371,7 @@ body {
   color: #e74149;
 }
 
-.form__body-how > input {
+.form__how > input {
   width: 287px;
   height: 23px;
   margin-top: 19px;
@@ -414,7 +379,7 @@ body {
   box-sizing: border-box;
 }
 
-.form__body-how > input::placeholder {
+.form__how > input::placeholder {
   font-family: 微軟正黑;
   font-size: 16px;
   font-weight: normal;
@@ -426,26 +391,13 @@ body {
   color: #afafaf;
 }
 
-.form__body-how > .warning-text {
-  margin-top: 5px;
-  font-family: 微軟正黑;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-.form__body-others {
+.form__others {
   max-width: 645px;
   padding: 0 40px;
   margin-bottom: 55px;
 }
 
-.form__body-others > label {
+.form__others > label {
   margin-bottom: 8px;
   font-family: 微軟正黑;
   font-size: 20px;
@@ -460,7 +412,7 @@ body {
   white-space: nowrap;
 }
 
-.form__body-others > .others-info {
+.form__others > .others-info {
   margin-bottom: 24px;
   font-family: 微軟正黑;
   font-size: 14px;
@@ -475,14 +427,14 @@ body {
   white-space: nowrap;
 }
 
-.form__body-others > input {
+.form__others > input {
   width: 287px;
   height: 23px;
   border: solid 1px #d0d0d0;
   box-sizing: border-box;
 }
 
-.form__body-others > input::placeholder {
+.form__others > input::placeholder {
   font-family: 微軟正黑;
   font-size: 16px;
   font-weight: normal;
@@ -528,7 +480,7 @@ body {
   white-space: nowrap;
 }
 
-.web__bottom-area {
+.footer__wrapper {
   width: 100%;
   height: 60px;
   background: black;
@@ -537,7 +489,7 @@ body {
   align-items: center;
 }
 
-.web__bottom-text {
+.footer__text {
   font-family: 微軟正黑;
   font-size: 13px;
   font-weight: normal;

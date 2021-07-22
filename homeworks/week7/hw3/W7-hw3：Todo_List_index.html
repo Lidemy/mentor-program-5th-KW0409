@@ -17,7 +17,9 @@
     </div>
     <div class="List__input-area">
       <input class='List__input' type="text" placeholder="Add something to do here ~ " onfocus="this.placeholder=''" onblur="this.placeholder='Add something to do here ~'">
-      <input class="List__input-add-btn" type="button" value="+">
+      <div class="List__input-add-btn">
+        <i class="fa fa-plus-circle"></i>
+      </div>
     </div>
     <div class="List__todo-body">
       <div class="List__todo-area">
@@ -49,8 +51,8 @@
             <div class="finished__icon-area-trash">
               <i class="fas fa-trash-alt trash-btn"></i>
             </div>
-            <div class="finished__icon-area-check">
-              <i class="fas fa-check-circle check-btn"></i>
+            <div class="finished__icon-area-cancel">
+              <i class="fa fa-minus-circle cancel-btn"></i>
             </div>
           </div>
         </div>

@@ -13,7 +13,6 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: cursive;
   font-size: 65px;
   font-weight: bold;
   font-family: cursive;
@@ -60,16 +59,12 @@
 }
 
 .List__input-add-btn {
-  width: 35px;
-  height: 35px;
   border-radius: 50%;
-  border: white;
   margin-left: 10px;
-  background-color: #00000064;
-  color: #fffde7;
+  background-color: #ffffff64;
+  color: #5e81a5;
   font-size: 35px;
-  text-align: center;
-  line-height: 8px;
+  display: flex;
 }
 
 .List__input-add-btn:hover {
@@ -228,7 +223,7 @@
   right: 10px;
 }
 
-.finished__icon-area > .finished__icon-area-check {
+.finished__icon-area > .finished__icon-area-cancel {
   margin-left: 10px;
 }
 
@@ -237,7 +232,7 @@
   opacity: 0.8;
 }
 
-.finished__icon-area > .finished__icon-area-check > i:hover {
+.finished__icon-area > .finished__icon-area-cancel > i:hover {
   cursor: pointer;
   opacity: 0.8;
 }
