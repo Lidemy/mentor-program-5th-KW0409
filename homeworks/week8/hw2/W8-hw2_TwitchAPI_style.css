@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+}
+
+nav.wrapper {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  background-color: #ffffff;
+
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+div.navbar__area {
+  height: 55px;
+  padding-left: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.navbar__area-left {
+  font-family: Questrial;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  cursor: pointer;
+}
+
+a.nav {
+  padding: 15px 25px;
+  font-family: 微軟正黑;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
+  transition: all 0.2s;
+}
+
+a.nav + .nav {
+  margin-left: 2px;
+}
+
+nav.wrapper a:hover {
+  background: #3a3a3a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  div.navbar__area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 125px;
+    padding-left: 0;
+    padding-top: 35px;
+  }
+
+  div.navbar__area-right {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+  }
+
+  a.nav {
+    flex: 1;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.nav + .nav {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 560px) {
+  div.navbar__area {
+    height: 145px;
+  }
+}
+
+div.live__stream-wrapper {
+  background: url(room2.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 45px 30px;
+}
+
+@media (max-width: 1000px) {
+  div.live__stream-wrapper {
+    background: url(cool_bg.jpg) center no-repeat;
+    background-size: cover;
+    padding: 45px 0;
+  }
+}
+
+div.live__stream-info {
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.live__stream-category {
+  margin-bottom: 20px;
+  font-family: 微軟正黑;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+div.live__stream-category > h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+div.stream__card-area {
+  display: inline-block;
+  max-width: 1100px;
+  min-height: 400px;
+  padding: 0 150px;
+}
+
+@media (max-width: 680px) {
+  div.stream__card-area {
+    padding: 0px;
+  }
+}
+
+div.game-link {
+  width: 340px;
+  height: 290px;
+  background: #ffffff;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+div.game-link + .game-link {
+  margin-left: 10px;
+}
+
+@media (max-width: 500px) {
+  div.game-link {
+    width: 350px;
+    height: 280px;
+    margin-left: 0px;
+  }
+
+  div.game-link + .game-link {
+    margin-top: 50px;
+    margin-left: 0px;
+  }
+}
+
+div.game-link.none {
+  height: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+
+div.game-link:hover {
+  transform: scale(1.07);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+div.game-link a {
+  text-decoration: none;
+}
+
+div.game-link .game-view {
+  height: 220px;
+  background: #697ffbec;
+}
+
+div.game-link .game-info {
+  height: 70px;
+  background: #373737ec;
+  display: flex;
+  align-items: center;
+}
+
+div.game-info > .hoster-photo {
+  width: 60px;
+  height: 60px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+  div.game-link .game-view {
+    height: 220px;
+    background: #697ffbec;
+  }
+
+  div.game-link .game-info {
+    height: 60px;
+    background: #373737ec;
+    display: flex;
+    align-items: center;
+  }
+
+  div.game-info > .hoster-photo {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+}
+
+.hoster-photo > img {
+  border-radius: 50%;
+}
+
+div.game-info > .hoster-info {
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.hoster-info > .vid-name {
+  width: 260px;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.hoster-info > .hoster-name {
+  width: 260px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 500px) {
+  div.hoster-info > .vid-name {
+    width: 230px;
+    font-size: 20px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  div.hoster-info > .hoster-name {
+    width: 230px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
