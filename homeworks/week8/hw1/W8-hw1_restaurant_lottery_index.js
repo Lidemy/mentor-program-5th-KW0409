@@ -44,70 +44,53 @@ body.addEventListener('click', (e) => {
       }
 
       switch (prize) {
-        case 'First':
-          first()
+        case 'First': {
+          const className = 'prize-1'
+          const prizeText = prizeMsg.First
+          showPrizeMsg(className, prizeText)
           break
-        case 'SECOND':
-          second()
+        }
+        case 'SECOND': {
+          const className = 'prize-2'
+          const prizeText = prizeMsg.Second
+          showPrizeMsg(className, prizeText)
           break
-        case 'THIRD':
-          third()
+        }
+        case 'THIRD': {
+          const className = 'prize-3'
+          const prizeText = prizeMsg.Third
+          const h1Class = 'white'
+          showPrizeMsg(className, prizeText, h1Class)
           break
-        case 'NONE':
-          none()
+        }
+        case 'NONE': {
+          const className = 'prize-4'
+          const prizeText = prizeMsg.None
+          const h1Class = 'white'
+          showPrizeMsg(className, prizeText, h1Class)
           break
-        default:
+        }
+        default: {
           alert(errorMessage2)
+        }
       }
     })
   }
 })
 
-function first() {
-  body.classList.add('prize-1')
-  body.innerHTML = `
-  <div class="prize-area">
-    <h1>
-      恭喜你中頭獎了！日本東京來回雙人遊！
-    </h1>
-    <div class="lottery__info-btn" onclick="javascript:window.location.reload()">回抽獎頁面</div>
-  </div>
-  `
+const prizeMsg = {
+  First: '恭喜你中頭獎了！日本東京來回雙人遊！',
+  Second: '恭喜你抽中二獎！<br>90 吋電視一台！',
+  Third: '恭喜你抽中三獎：<br>知名 YouTuber 簽名握手會入場券一張，bang！',
+  None: '恭喜你抽中超級大獎了：<br>香蕉君也許會遲到但是...絕不會缺席！！'
 }
 
-function second() {
-  body.classList.add('prize-2')
+function showPrizeMsg(className, prizeText, h1Class) {
+  body.classList.add(className)
   body.innerHTML = `
   <div class="prize-area">
-    <h1 class="">
-      恭喜你抽中二獎！<br>
-      90 吋電視一台！
-    </h1>
-    <div class="lottery__info-btn" onclick="javascript:window.location.reload()">回抽獎頁面</div>
-  </div>
-  `
-}
-
-function third() {
-  body.classList.add('prize-3')
-  body.innerHTML = `
-  <div class="prize-area">
-    <h1 class="white">
-      恭喜你抽中三獎：<br>
-      知名 YouTuber 簽名握手會入場券一張，bang！
-    </h1>
-    <div class="lottery__info-btn" onclick="javascript:window.location.reload()">回抽獎頁面</div>
-  </div>
-  `
-}
-
-function none() {
-  body.classList.add('prize-4')
-  body.innerHTML = `
-  <div class="prize-area">
-    <h1 class="white">
-      恭喜你抽中超級大獎了：<br>
-      香蕉君也許會遲到但是...絕不會缺席！！
+    <h1 class=${h1Class}>
+      ${prizeText}
     </h1>
     <div class="lottery__info-btn" onclick="javascript:window.location.reload()">回抽獎頁面</div>
   </div>
