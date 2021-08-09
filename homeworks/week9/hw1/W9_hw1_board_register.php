@@ -26,24 +26,22 @@
     </div>
 
     <?php
-
-      if(!empty($_GET['errCode'])) {
+      if (!empty($_GET['errCode'])) {
         $code = $_GET['errCode'];
-        if($code === '1'){
+        if ($code === '1') {
           $msg = '暱稱未填寫！';
           echo "<h2 class='error'>資料不齊全：" . $msg . "</h2>";
-        }else if($code === '2'){
+        } else if ($code === '2') {
           $msg = '帳號未填寫！';
           echo "<h2 class='error'>資料不齊全：" . $msg . "</h2>";
-        }else if($code === '3'){
+        } else if ($code === '3') {
           $msg = '密碼未填寫！';
           echo "<h2 class='error'>資料不齊全：" . $msg . "</h2>";
-        }else if($code === '4'){
+        } else if ($code === '4') {
           $msg = '暱稱/帳號已被註冊！';
           echo "<h2 class='error'>錯誤：" . $msg . "</h2>";
         }
       }
-
     ?>
 
     <form class="board__comment-form register__form" method="POST" action="W9_hw1_board_handle_register.php">

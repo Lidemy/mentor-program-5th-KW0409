@@ -1,6 +1,5 @@
 
 <?php
-
   session_start();
   require_once('W9_hw1_board_conn.php');
   
@@ -14,7 +13,6 @@
   if(empty($result)){
     exit('Error:' . $conn->error);
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -38,53 +36,49 @@
   <main class="board">
     <div class="board__top">
       <h1 class="board__title">Comments</h1>
-      <?php if(!$username){ ?>
+      <?php if (!$username) { ?>
         <div class="user__btn-area">
           <a class="login" href="./W9_hw1_board_login.php">登入</a>
           <a class="logout" href="./W9_hw1_board_register.php">註冊</a>
         </div>
-      <?php } ?>
-      
-      <?php if($username){ ?>
+      <?php } else if ($username) { ?>
         <div class="user__btn-area">
           <a class="login" href="./W9_hw1_board_handle_logout(ver_session).php">登出</a>
         </div>
-      <?php } ?>
-      
+      <?php } ?>      
     </div>
-    <form class="board__comment-form" method="POST" action="W9_hw1_board_handle_add_comments(ver_session).php">
-      <?php if(!$username){ ?>
-        <span class="nickname">有什麼想說的嗎？<br>請在註冊/登入後一起來參與討論吧～</span>
-      <?php } ?>
-
-      <?php if($username){ ?>
-
-         <?php
-          if(!empty($_GET['errCode'])) {
-            $code = $_GET['errCode'];
-            if($code === '1'){
-              $msg = '發布的內容不可為空，除非你腦袋空空！';
-              echo "<h2 class='error'>錯誤：" . $msg . "</h2>";
-            }
+    
+    <?php if (!$username) { ?>
+      <span class="nickname">有什麼想說的嗎？<br>請在註冊/登入後一起來參與討論吧～</span>
+    <?php } else if ($username) { ?>
+      <?php
+        if(!empty($_GET['errCode'])) {
+          $code = $_GET['errCode'];
+          if($code === '1'){
+            $msg = '發布的內容不可為空，除非你腦袋空空！';
+            echo "<h2 class='error'>錯誤：" . $msg . "</h2>";
           }
-         ?> 
+        } else if (!empty($_GET['connErr'])) {
+          echo "<h2 class='error'>新增留言出錯：" . $_GET['connErr'] . "</h2>";
+        }
+      ?> 
       
-        <div class="form__input-area">
-          <span class="nickname">有什麼想說的嗎？ <?php echo $username;?></span>
-          <textarea class="board__input" name="content" rows="4" placeholder="請輸入你的留言..."></textarea>
-        </div>
-        <div class="form__btn-area">
-          <input class="form__submit-btn" type="submit" value="送出">
-        </div>
-      <?php } ?>
-    </form>
+      <form class="board__comment-form" method="POST" action="W9_hw1_board_handle_add_comments(ver_session).php">
+          <div class="form__input-area">
+            <span class="nickname">有什麼想說的嗎？ <?php echo $username;?></span>
+            <textarea class="board__input" name="content" rows="4" placeholder="請輸入你的留言..."></textarea>
+          </div>
+          <div class="form__btn-area">
+            <input class="form__submit-btn" type="submit" value="送出">
+          </div>
+      </form>
+    <?php } ?>
 
     <div class="board__hr">
       <hr>
     </div>
 
     <div class="board__comment-area">
-      
       <?php
         while($data_arr = $result->fetch_assoc()){
           $nickname = $data_arr['nickname'];
@@ -120,7 +114,6 @@
           echo $ans;
         }
       ?>
-
     </div>
    
     <div class="board__hr">

@@ -1,15 +1,14 @@
 
 <?php
-
   require_once('W9_hw1_board_conn.php');
 
-  if(empty($_POST['nickname'])){
+  if (empty($_POST['nickname'])) {
     header('Location: W9_hw1_board_register.php?errCode=1');
     exit();
-  }else if(empty($_POST['username'])){
+  } else if (empty($_POST['username'])) {
     header('Location: W9_hw1_board_register.php?errCode=2');
     exit();
-  }else if(empty($_POST['password'])){
+  } else if (empty($_POST['password'])) {
     header('Location: W9_hw1_board_register.php?errCode=3');
     exit();
   }
@@ -22,14 +21,14 @@
   $nickname,$username,$password);
 
   $result = $conn->query($sql);
-  if(!($result)){
+  if (!($result)) {
     $code = $conn->errno;
-    if($code === 1062){
+    if ($code === 1062) {
       header('Location: W9_hw1_board_register.php?errCode=4');
       exit();
-    }else {
-      exit('Error:' . $conn->error);
     }
+    
+    exit('Error:' . $conn->error);
   }
   
   header("Location: W9_hw1_board_login.php");

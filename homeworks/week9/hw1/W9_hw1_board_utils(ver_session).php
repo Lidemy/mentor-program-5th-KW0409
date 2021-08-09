@@ -1,6 +1,5 @@
 
 <?php
-
   require_once('W9_hw1_board_conn.php');
 
   function getUsersFromUsername($username){
@@ -11,9 +10,8 @@
     if(empty($result)){
       exit('Error:' . $conn->error);
     }
-    $data_arr = $result->fetch_assoc();
 
+    $data_arr = $result->fetch_assoc();
     return $data_arr;
   }
-  
 ?>
