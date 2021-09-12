@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./W12_hw2_Todo_List_style.css">
+  <link rel='stylesheet' href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <title>W12 - Todo List</title>
+</head>
+<body>
+  <main class="list">
+    <div class="hide password__form">
+      <div class="form__icon-area">
+        <i class="lock__icon fas fa-user-lock" title="點擊頭像，即可取消上鎖"></i>
+        <span class="locked__text">當前狀態：已上鎖 (輸入密碼後可查看內容)</span>
+      </div>
+    
+      <form>
+        <label>密碼：<input class="password__input" type="password" placeholder="請輸入密碼"></label>
+        <button class="password__btn" type="submit">確認</button>
+      </form>
+    </div>
+
+    <div class="list__wrapper">
+      <div class="list__mode-area">
+        <div class="unlock__mode">
+          <i class="unlock__icon fas fa-lock-open" title="點擊鎖頭，即可上鎖"></i><span>當前狀態：未上鎖</span>
+        </div>
+  
+        <div class="hide lock__mode lock__input-mode">
+          <i class="lock__icon fas fa-user-lock" title="點擊頭像，即可取消上鎖"></i>
+          <input class="input__area" type="password" placeholder="請輸入密碼 (最多十位)" maxlength="10"/>
+          <button class="lock__btn">確認上鎖</button>
+        </div>
+        <div class="hide lock__mode lock__waiting-mode">
+          <i class="lock__icon fas fa-user-lock" title="點擊頭像，即可取消上鎖"></i>
+          <span class="locking__text">當前狀態：儲存後上鎖 (或點擊頭像取消上鎖)</span>
+        </div>
+        <div class="hide lock__mode lock__locked-mode">
+          <i class="lock__icon fas fa-user-lock" title="點擊頭像，即可取消上鎖"></i>
+          <span class="locked__text">當前狀態：已上鎖 (點擊頭像可取消上鎖)</span>
+        </div>
+      </div>
+  
+      <div class="list__title-area">
+        Todo List
+      </div>
+  
+      <div class="list__input-area">
+        <input class='list__input' type="text" placeholder="Add something to do here ~ " onfocus="this.placeholder=''" onblur="this.placeholder='Add something to do here ~'">
+        <div class="list__input-add-btn">
+          <i class="fa fa-plus-circle"></i>
+        </div>
+      </div>
+      
+      <div class="list__todo-body">
+        <div class="list__todo-area">
+          <div class="list__todo-area-title">
+            待辦事項
+          </div>
+        </div>
+      </div>
+  
+      <div class="first__hr">
+        <hr class="hr">
+      </div>
+  
+      <div class="list__finished-body">
+        <div class="list__finished-area">
+          <div class="list__finished-area-title">
+            已完成事項
+          </div>
+        </div>
+      </div>
+      
+      <div class="second__hr">
+        <ul class="hide list__inform-area">
+          <li class="list__created-at">建立時間：</li>
+          <li class="list__updated-at">更新時間：</li>
+          <li class="list__url">網址：</li>
+        </ul>
+        
+        <hr>
+      </div>
+  
+      <nav class="navbar">
+        <div class="clear__btn">清除全部</div>
+  
+        <ul class="display__btn-list">
+          <li class="display__btn display__btn-all selected">顯示全部</li>
+          <li class="display__btn display__btn-todo">顯示待辦</li>
+          <li class="display__btn display__btn-finished">顯示完成</li>
+        </ul>
+  
+        <div class="storage__btn">儲存</div>
+      </nav>
+    </div>
+  </main>
+  <script src="./W12_hw2_Todo_List_index.js"></script>
+</body>
+</html>
