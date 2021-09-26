@@ -20,18 +20,20 @@ function responseMsg($status, $str) {
 if (empty($_POST['web_key'])) {
   $status = false;
   $str = 'Please enter the missing key';
-  exit(responseMsg($status, $str));
 } else if (empty($_POST['nickname']) && empty($_POST['content'])) {
   $status = false;
   $str = 'Please enter your nickname and comment';
-  exit(responseMsg($status, $str));
 } else if (empty($_POST['nickname'])) {
   $status = false;
   $str = 'Please enter your nickname';
-  exit(responseMsg($status, $str));
 } else if (empty($_POST['content'])) {
   $status = false;
   $str = 'Please enter your comment';
+} else {
+  $status = true;
+}
+
+if (!$status) {
   exit(responseMsg($status, $str));
 }
 $web_key = $_POST['web_key'];

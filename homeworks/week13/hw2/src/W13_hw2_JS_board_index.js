@@ -4,18 +4,15 @@ import { getComments, appendComments, getCurrentDateTime } from './W13_hw2_JS_bo
 import { getFormTemplate } from './W13_hw2_JS_board_templates'
 
 // 初始化留言板 plugin 的 function
-export default function init(options) {
+// eslint-disable-next-line import/prefer-default-export
+export function init(options) {
   // 當整個檔案只有一個導出時，eslint 會要求必須用 export default 來導出
   // 且匯入 default export 時，不可用解構的語法來 import(把 {} 拿掉即可)
   // 詳情可見 https://www.lowerfish.com/2018/08/28/what-is-the-benefit-of-prefer-default-export/
-  let webKey = ''
-  let apiURL = ''
-  let containerElement = null
-  // 上面三個變數宣告要放 function 裡面是為了避免同時 init 兩個留言板時，會有只抓到後呼叫的留言板的情況
 
-  webKey = options.webKey
-  apiURL = options.apiURL
-  containerElement = $(options.containerSelector)
+  // 這三個變數宣告必須要放 function 裡面，避免同時 init 兩個留言板時，會有只抓到後呼叫的留言板的情況
+  const { webKey, apiURL } = options
+  const containerElement = $(options.containerSelector)
   containerElement.append(getFormTemplate(webKey))
 
   // 取得 comments

@@ -11,8 +11,8 @@
   <script>
     // 呼叫初始化的 function,並傳入參數
     $(document).ready(() => {
-    // 因為是用 export default 導出，因此不能用 init，要用 default
-      commentPlugin.default({
+    // 如果是用 export default 導出，就不能用 commentPlugin.init，要用 commentPlugin.default
+      commentPlugin.init({
         webKey: 'KWang',
         apiURL: 'http://mentor-program.co/mtr04group1/KWang/Week13/W13-hw2',
         containerSelector: '.comment-area'
@@ -21,7 +21,7 @@
 
     // 可同時呼叫兩個獨立的留言板，且互不干擾 
     $(document).ready(() => {
-      commentPlugin.default({
+      commentPlugin.init({
         webKey: 'KWang123',
         apiURL: 'http://mentor-program.co/mtr04group1/KWang/Week13/W13-hw2',
         containerSelector: '.comment-area'

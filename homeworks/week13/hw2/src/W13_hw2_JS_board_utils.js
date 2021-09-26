@@ -34,13 +34,13 @@ export function getComments(commentsArr, webKey) {
 // 取得現在時間的 function
 export function getCurrentDateTime() {
   const today = new Date()
-  const Year = today.getFullYear()
-  const Month = (today.getMonth() + 1) >= 10 ? (today.getMonth() + 1) : (`0${(today.getMonth() + 1)}`)
-  const Day = (today.getDate()) >= 10 ? (today.getDate()) : (`0${today.getDate()}`)
-  const Hours = (today.getHours()) >= 10 ? (today.getHours()) : (`0${today.getHours()}`)
-  const Minutes = (today.getMinutes()) >= 10 ? (today.getMinutes()) : (`0${today.getMinutes()}`)
-  const Seconds = (today.getSeconds()) >= 10 ? (today.getSeconds()) : (`0${today.getSeconds()}`)
-  const currentDateTime = `${Year}-${Month}-${Day} ${Hours}:${Minutes}:${Seconds}`
+  const year = today.getFullYear()
+  const month = (today.getMonth() + 1) >= 10 ? (today.getMonth() + 1) : (`0${(today.getMonth() + 1)}`)
+  const day = (today.getDate()) >= 10 ? (today.getDate()) : (`0${today.getDate()}`)
+  const hours = (today.getHours()) >= 10 ? (today.getHours()) : (`0${today.getHours()}`)
+  const minutes = (today.getMinutes()) >= 10 ? (today.getMinutes()) : (`0${today.getMinutes()}`)
+  const seconds = (today.getSeconds()) >= 10 ? (today.getSeconds()) : (`0${today.getSeconds()}`)
+  const currentDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 
   return currentDateTime
 }
