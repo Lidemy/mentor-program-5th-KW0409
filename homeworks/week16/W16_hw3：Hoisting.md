@@ -72,6 +72,7 @@ a = 10;
 
 而 Hoisting 的特性也是有著優先度的概念，順序為 function > argument > 一般的變數宣告(ex: var)
 並且因為 hoisting 是跟變數有關的，因此 hoisting 只會發生在 『變數自己的 scope 中』，但如果在 function 中對一個完全不存在的變數賦值時(ex: b = 10)，就會直接在 global 的環境宣告一個全域變數(同樣只會提升宣告，不會提升賦值)。
+**(更確切的過程是，JS 引擎會先順著 scope chain 一層層上去找，如果都沒找到就會幫我們在最外層 global 宣告)**
 
 - **注意**： 『如果在 function 中對一個完全不存在的變數賦值時(ex: b = 10)，就會直接在 global 的環境宣告一個全域變數(同樣只會提升宣告，不會提升賦值)』，這一情況的前提是在非 `use strict` 的模式下
   如果是在 `use strict` 的模式下，則會變成出現 `RefernceError: b is not defined` 的錯誤
