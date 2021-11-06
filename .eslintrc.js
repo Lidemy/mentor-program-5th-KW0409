@@ -18,6 +18,8 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
+    camelcase: 'off',
+    '@typescript-eslint/camelcase': 0,
     'no-console': 'off'
   }
 }

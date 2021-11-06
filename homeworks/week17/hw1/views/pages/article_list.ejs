@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../template/header', {
+    title: 'W17部落格 - 文章列表'
+  }) %>
+</head>
+
+<body>
+  <%- include('../template/navbar', {
+    userPage: null
+  }) %>
+
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <% if (articles) { %>
+        <% articles.forEach(article => { %>
+          <div class="admin-posts">
+            <div class="admin-post list-post">
+              <div class="admin-post__title">
+                <a class="article__link" target="_blank" href="/article-page/<%= article.id %>">
+                  <%= article.title %>
+                </a>
+              </div>
+      
+              <div class="admin-post__info">
+                <div class="admin-post__created-at article__list-created-at">
+                  <%= article.createdAt %>
+                </div>
+              </div>
+            </div>
+      
+            <div class="list__author-info">
+              Posted by 
+              <a class="list__author-link" href="/author-page?author_name=<%= article.KWang_blog_user.username %>&author_nickname=<%= article.KWang_blog_user.nickname %>">
+                <%= article.KWang_blog_user.nickname %>
+              </a>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('../template/page_btn', {
+    route: '/article-list',
+    queryString: 'page'
+  }) %>
+
+  <%- include('../template/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../template/header', {
+    title: 'W17部落格 - 文章頁面'
+  }) %>
+</head>
+
+<body>
+  <%- include('../template/navbar', {
+    userPage: null
+  }) %>
+
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+
+  <div class="container-wrapper">
+    <div class="posts">
+      <% if (article) { %>
+        <article class="post">
+          <div class="post__header">
+            <div>
+              <%= article.title %>
+            </div>
+
+            <% if (username === article.KWang_blog_user.username) { %>
+              <div class="post__actions">
+                <a class="post__action" href="/update-article/<%= article.id %>">
+                  編輯
+                </a>
+              </div>
+            <% } %>
+          </div>
+    
+          <div class="post__author-info">
+            Posted by
+            <a class="post__author-link" href="/author-page?author_name=<%= article.KWang_blog_user.username %>&author_nickname=<%= article.KWang_blog_user.nickname %>">
+              <%= article.KWang_blog_user.nickname %>
+            </a>
+          </div>
+    
+          <div class="post__info">
+            <%= article.createdAt %>
+          </div>
+    
+          <div class="post__content">
+            <%= article.content %>
+          </div>
+        </article>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('../template/footer') %>
+</body>
+
+</html>

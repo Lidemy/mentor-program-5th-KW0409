@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../template/header', {
+    title: 'W17部落格 - 後台頁面'
+  }) %>
+</head>
+
+<body>
+  <%- include('../../template/navbar', {
+    userPage: {
+      admin: {
+        username,
+        nickname
+      },
+      changeBtn: true
+    }
+  }) %>
+
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <% if (articles) { %> 
+        <% let switch_num = 1 %>
+        <% articles.forEach(article => { %>
+          <div class="admin-posts">
+            <div class="admin-post">
+              <div class="admin-post__title">
+                <a class="article__link" target="_blank"
+                  href="/article-page/<%= article.id %>">
+                  <%= article.title %>
+                </a>
+              </div>
+      
+              <div class="admin-post__info">
+                <div class="switch">
+                  <input class="switch-checkbox" id="switchID<%= switch_num %>" type="checkbox" name="switch-checkbox"
+                    checked>
+                  <label class="switch-label" for="switchID<%= switch_num %>">
+                    <span class="switch-txt" turnOn="顯示" turnOff="隱藏"></span>
+                    <span class="switch-Round-btn"></span>
+                  </label>
+                </div>
+      
+                <div class="admin-post__created-at">
+                  <%= article.createdAt %>
+                </div>
+                
+                <a class="admin-post__btn edit"
+                  href="/update-article/<%= article.id %>">
+                  編輯
+                </a>
+                <a class="admin-post__btn delete"
+                  href="/delete-article/<%= article.id %>">
+                  刪除
+                </a>
+              </div>
+            </div>
+          </div>
+          <% switch_num ++ %>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('../../template/page_btn', {
+    route: '/admin',
+    queryString: 'page'
+  }) %>
+
+  <%- include('../../template/footer') %>
+</body>
+
+</html>
