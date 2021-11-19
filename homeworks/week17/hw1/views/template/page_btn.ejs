@@ -1,0 +1,15 @@
+<div class="page__btn-area">
+  <% if (page !== 1) { %>
+    <a class="top__page-btn style1-btn" href="<%= route %>">首頁</a>
+    <a class="style1-btn style2-btn" href="<%= route %>?<%= queryString %>=<%= page - 1 %>">
+      &larr; 上一頁
+    </a>
+  <% } %>
+
+  <% if (page !== total_page) { %>
+    <a class="style1-btn style2-btn" href="<%= route %>?<%= queryString %>=<%= page + 1 %>">
+      下一頁 &rarr;
+    </a>
+    <a class="end__page-btn style1-btn" href="<%= route %>?<%= queryString %>=<%= total_page %>">末頁</a>
+  <% } %>
+</div>

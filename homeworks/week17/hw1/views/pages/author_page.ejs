@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../template/header', {
+    title: 'W17部落格 - 文章作者頁面'
+  }) %>
+</head>
+
+<body>
+  <%- include('../template/navbar', {
+    userPage: {
+      author: {
+        username: author_name,
+        nickname: author_nickname
+      }
+    }
+  }) %>
+
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <% if (articles) { %>
+        <% articles.forEach(article => { %>
+          <div class="admin-posts">
+            <div class="admin-post list-post">
+              <div class="admin-post__title">
+                <a class="article__link" target="_blank" href="/article-page/<%= article.id %>">
+                  <%= article.title %>
+                </a>
+              </div>
+
+              <div class="admin-post__info">
+                <div class="admin-post__created-at article__list-created-at">
+                  <%= article.createdAt %>
+                </div>
+              </div>
+            </div>
+
+            <div class="list__author-info">
+              Posted by
+              <a class="list__author-link" href="/author-page?author_name=<%= author_name %>&author_nickname=<%= author_nickname %>">
+                <%= author_nickname %>
+              </a>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- 不能直接在 <%- %> 包起來的範圍中使用 <% %> 或 <%= %>(甚至 HTML 標籤或 註解標籤 也不行) -->
+  <!-- 因為這樣會讓 <%- %> 標籤的配對出錯 -->
+  <%- include('../template/page_btn', { 
+    route: '/author-page',
+    queryString: `author_name=${author_name}&author_nickname=${author_nickname}&page`
+  }) %>
+
+  <%- include('../template/footer') %>
+</body>
+
+</html>

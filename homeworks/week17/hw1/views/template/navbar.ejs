@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <div class="wrapper navbar__wrapper">
+    <div class="navbar__site-name">
+      <% if (userPage) { %>
+        <% if (userPage.admin) { %>
+          <a href="/admin">
+            <%= userPage.admin.nickname %>'s Blog
+          </a>
+        <% } else if (userPage.author) { %>
+          <a href="/author-page?author_name=<%= userPage.author.username %>&author_nickname=<%= userPage.author.nickname %>">
+            <%= userPage.author.nickname %>'s Blog
+          </a>
+        <% } %>
+      <% } else { %>
+        <a href="/">Blog</a>
+      <% } %>
+    </div>
+
+    <ul class="navbar__list">
+      <div>
+        <% if (userPage) { %>
+          <% if (userPage.admin) { %>
+            <li><a href="/">回首頁</a></li>
+            <li><a href="#">分類專區(暫未開放)</a></li>
+            <li><a href="#">關於我(暫未開放)</a></li>
+          <% } else if (userPage.author) { %>
+            <li><a href="/">回首頁</a></li>
+            <li><a href="/article-list">文章列表</a></li>
+            <li><a href="#">分類專區(暫未開放)</a></li>
+            <li><a href="#">關於 <%= userPage.author.nickname %>(暫未開放)</a></li>
+          <% } %>
+        <% } else { %>
+          <li><a href="/article-list">文章列表</a></li>
+          <li><a href="#">分類專區(暫未開放)</a></li>
+        <% } %>
+      </div>
+      
+      <% if (username) { %>
+        <div>
+          <span class="users__nickname">
+            歡迎回來, <%= nickname %>
+          </span>
+
+          <% if (userPage && userPage.changeBtn) { %>
+            <li><a href="/add-article">新增文章</a></li>
+            <li><a href="/logout">登出</a></li>
+          <% } else { %>
+            <li><a href="/admin">管理後台</a></li>
+            <li><a href="/logout">登出</a></li>
+          <% } %>
+        </div>
+      <% } else { %>
+        <div>
+          <li><a href="/login">登入</a></li>
+          <li><a href="/register">註冊</a></li>
+        </div>
+      <% } %>
+    </ul>
+  </div>
+</nav>

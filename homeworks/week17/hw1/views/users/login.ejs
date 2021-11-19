@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../template/header', {
+    title: 'W17部落格 - 登入頁面'
+  }) %>
+</head>
+
+<body>
+  <%- include('../template/navbar', {
+    userPage: null
+  }) %>
+
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+
+  <div class="login-wrapper">
+    <% if (errorMsg && errorMsg !== 0) { %>
+      <h3 class="error">
+        <%= errorMsg %>
+      </h3>
+    <% } %>
+  
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <div class="input__wrapper">
+        <div class="input__label">USERNAME</div>
+        <input class="input__field" type="text" name="username" />
+      </div>
+  
+      <div class="input__wrapper">
+        <div class="input__label">PASSWORD</div>
+        <input class="input__field" type="password" name="password" />
+      </div>
+      <input type='submit' value="登入" />
+    </form>
+  </div>
+</body>
+
+</html>
