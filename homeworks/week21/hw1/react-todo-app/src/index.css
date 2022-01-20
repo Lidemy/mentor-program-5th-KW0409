@@ -1,0 +1,19 @@
+@import-normalize;
+@import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

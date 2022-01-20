@@ -1,0 +1,24 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,500,700,900&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: rgb(165, 170, 170, 10%);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
