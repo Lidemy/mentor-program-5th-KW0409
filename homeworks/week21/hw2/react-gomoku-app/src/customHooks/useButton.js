@@ -9,7 +9,7 @@ export default function useButton(setBoardState) {
         return prevState;
       }
 
-      const newStep = --currentStep;
+      const newStep = currentStep - 1;
       return {
         ...prevState,
         stepRound: newStep,
@@ -27,7 +27,7 @@ export default function useButton(setBoardState) {
         return prevState;
       }
 
-      const newStep = ++currentStep;
+      const newStep = currentStep + 1;
       return {
         ...prevState,
         stepRound: newStep,

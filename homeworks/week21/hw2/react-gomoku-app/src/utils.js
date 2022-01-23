@@ -50,7 +50,7 @@ export function findWinner(currentBoard, lastPosition) {
   for (const innerArr of direcArr) {
     if (
       countTotal(currentBoard, lastPosition, innerArr[0])[0] +
-        countTotal(currentBoard, lastPosition, innerArr[1])[0] ===
+        countTotal(currentBoard, lastPosition, innerArr[1])[0] >=
       4
     ) {
       return {

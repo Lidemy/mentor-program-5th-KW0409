@@ -50,9 +50,9 @@ function TodosFilterNav() {
 
   return (
     <>
-      <Nav $active={filterValue === "All" && true}>All</Nav>
-      <Nav $active={filterValue === "Done" && true}>Done</Nav>
-      <Nav $active={filterValue === "Todo" && true}>Todo</Nav>
+      <Nav $active={filterValue === "All"}>All</Nav>
+      <Nav $active={filterValue === "Done"}>Done</Nav>
+      <Nav $active={filterValue === "Todo"}>Todo</Nav>
     </>
   );
 }

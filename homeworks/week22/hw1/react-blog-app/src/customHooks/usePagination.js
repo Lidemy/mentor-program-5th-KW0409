@@ -24,8 +24,8 @@ export default function usePagination(pageDatas, setPageDatas) {
               ...prevState,
               currentPage:
                 pageValue === "prev"
-                  ? prevState.currentPage--
-                  : prevState.currentPage++,
+                  ? prevState.currentPage - 1
+                  : prevState.currentPage + 1,
             };
           });
           break;

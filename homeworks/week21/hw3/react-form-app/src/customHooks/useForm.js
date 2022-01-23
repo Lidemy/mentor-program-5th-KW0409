@@ -15,11 +15,11 @@ export default function useForm(formInputDatas) {
   const [isSubmited, setIsSubmited] = useState(false);
 
   const checkFormRequired = useCallback(() => {
-    const RequiredValues = formValues.filter((formValue) => {
+    const requiredValues = formValues.filter((formValue) => {
       if (formValue.isRequired) return formValue;
     });
 
-    if (RequiredValues.find((formValue) => formValue.inputValue === "")) {
+    if (requiredValues.find((formValue) => formValue.inputValue === "")) {
       return false;
     } else {
       return true;

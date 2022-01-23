@@ -76,36 +76,32 @@ const TodoItemAction = styled.div`
   width: 15%;
   display: flex;
   justify-content: center;
+`;
 
-  button {
-    border: none;
-    color: #0000008c;
-    font-size: 20px;
-    background: transparent;
-    ${(props) =>
-      props.$editCheck &&
-      `
-    background: green
-    `}
+const ActionButton = styled.button`
+  border: none;
+  color: #0000008c;
+  font-size: 20px;
+  background: transparent;
 
-    ${(props) =>
-      props.$editCancel &&
-      `
-    background: red
-    `}
-  }
+  ${(props) =>
+    props.$type &&
+    `
+    font-size: 22px;
+    color: ${props.$type === "updateCheck" ? `green` : `red`};
+  `}
 
-  button:hover {
+  &:hover {
     cursor: pointer;
     opacity: 0.8;
     transform: scale(1.2);
   }
 
-  button:active {
+  &:active {
     transform: scale(1);
   }
 
-  button + button {
+  & + & {
     margin-left: 5px;
   }
 `;
@@ -158,28 +154,25 @@ export default function TodoItem({
       <TodoItemAction>
         {!todo.isEditable && (
           <>
-            <button onClick={handleEditButton}>
+            <ActionButton onClick={handleEditButton}>
               <i className="fas fa-edit"></i>
-            </button>
-            <button onClick={handleDeleteButton}>
+            </ActionButton>
+            <ActionButton onClick={handleDeleteButton}>
               <i className="fas fa-trash-alt"></i>
-            </button>
+            </ActionButton>
           </>
         )}
         {todo.isEditable && (
           <>
-            <button
-              onClick={handleUpdateCheckButton}
-              style={{ color: "green", fontSize: "22px" }}
-            >
+            <ActionButton $type="updateCheck" onClick={handleUpdateCheckButton}>
               <i className="fas fa-check-circle"></i>
-            </button>
-            <button
+            </ActionButton>
+            <ActionButton
+              $type="updateCancel"
               onClick={handleUpdateCancelButton}
-              style={{ color: "red", fontSize: "22px" }}
             >
               <i className="fas fa-times-circle"></i>
-            </button>
+            </ActionButton>
           </>
         )}
       </TodoItemAction>
