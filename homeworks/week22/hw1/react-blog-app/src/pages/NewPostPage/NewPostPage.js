@@ -2,7 +2,6 @@ import { useRef } from "react";
 import styled from "styled-components";
 
 import { postArticle } from "../../WebAPI";
-import { findEmptyInput } from "../../utils";
 import useSubmit from "../../customHooks/useSubmit";
 
 const Root = styled.div`
