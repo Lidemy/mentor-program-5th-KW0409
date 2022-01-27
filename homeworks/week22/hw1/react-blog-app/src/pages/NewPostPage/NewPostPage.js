@@ -5,10 +5,11 @@ import { postArticle } from "../../WebAPI";
 import useSubmit from "../../customHooks/useSubmit";
 
 const Root = styled.div`
-  padding-top: 50px;
+  padding: 50px 0;
+  min-height: calc(100vh - 64px);
   display: flex;
   justify-content: center;
-  height: 100%;
+  align-items: center;
 `;
 
 const NewPostForm = styled.form`
@@ -65,10 +66,6 @@ const NewPostContent = styled.div`
     margin-top: 35px;
   }
 `;
-
-const TitleInput = styled.input``;
-
-const ContentTextarea = styled.textarea``;
 
 const NewPostSubmit = styled.div`
   padding-top: 35px;
@@ -142,11 +139,11 @@ export default function NewPostPage() {
             {errorMessage && <ErrorMsg>{errorMessage}</ErrorMsg>}
             <NewPostContent>
               <span>文章標題: </span>
-              <TitleInput ref={titleInputRef} />
+              <input ref={titleInputRef} />
             </NewPostContent>
             <NewPostContent>
               <span>文章內容:</span>
-              <ContentTextarea ref={contentTextareaRef}></ContentTextarea>
+              <textarea ref={contentTextareaRef}></textarea>
             </NewPostContent>
             <NewPostSubmit>
               <button>確認發佈</button>
