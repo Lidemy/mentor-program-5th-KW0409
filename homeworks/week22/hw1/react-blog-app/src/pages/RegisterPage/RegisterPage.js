@@ -145,7 +145,7 @@ export default function RegisterPage() {
         <Root>
           <RegisterForm onSubmit={handleSubmit}>
             <RegisterTitle>註冊</RegisterTitle>
-            {<ErrorMsg>{errorMessage}</ErrorMsg>}
+            {errorMessage && <ErrorMsg>{errorMessage}</ErrorMsg>}
             <RegisterInput>
               <span>Nickname</span>
               <input ref={nicknameInputRef} />
