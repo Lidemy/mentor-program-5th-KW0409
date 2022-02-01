@@ -1,8 +1,10 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectFilterValue } from "../redux/selectors";
 import { changeFilter } from "../redux/actions";
+
+const navArr = ["All", "Done", "Todo"];
 
 export default function useFilterNav() {
   const dispatch = useDispatch();
@@ -14,7 +16,6 @@ export default function useFilterNav() {
     },
     [dispatch]
   );
-  const navArr = useMemo(() => ["All", "Done", "Todo"], []);
 
   return {
     navArr,

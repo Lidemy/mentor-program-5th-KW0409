@@ -24,7 +24,10 @@ export default function useTodos() {
   }, [todos, filterValue]);
 
   useEffect(() => {
-    if (isFirstRender.current) return (isFirstRender.current = false);
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     writeTodosToLocalStorage(todos);
   }, [todos]);
 
