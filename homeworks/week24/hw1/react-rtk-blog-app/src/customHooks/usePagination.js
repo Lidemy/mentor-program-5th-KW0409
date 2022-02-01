@@ -18,10 +18,13 @@ export default function usePagination() {
   }, [totalPage]);
 
   const slicePageArray = useMemo(() => {
-    if (currentPage < 6) return totalPageArray.slice(0, 6);
-    else if (currentPage > totalPage - 5)
+    if (currentPage < 6) {
+      return totalPageArray.slice(0, 6);
+    } else if (currentPage > totalPage - 5) {
       return totalPageArray.slice(totalPage - 6);
-    else return totalPageArray.slice(currentPage - 2, currentPage + 1);
+    } else {
+      return totalPageArray.slice(currentPage - 2, currentPage + 1);
+    }
   }, [currentPage, totalPage, totalPageArray]);
 
   const handleChangePage = useCallback(
