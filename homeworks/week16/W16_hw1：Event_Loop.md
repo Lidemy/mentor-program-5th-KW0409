@@ -48,10 +48,10 @@ console.log(5);
 
 8. 移除 call stack 中的 `setTimeout(() => { console.log(2) }, 0)`
    (在另外一個 thread 中，`setTimeout(() => { console.log(2) }, 0)` 會在 0 毫秒後到期並將 **`() => { console.log(2) }`** 丟到 callback queue 中開始等待)
-9. call stack 出現 `console.log(3)`
 
 - **注意：** 被丟到 callback queue 的不會是整段的 `setTimeOut(...)` 也不是只有 `console.log(2)` 而已，而是 setTimeOut 的第一個參數 `() => { console.log(2) }` 也就是要被執行的 callback function 參數
 
+9. call stack 出現 `console.log(3)`
 10. 執行 `console.log(3)`
 11. 移除 call stack 中的 `console.log(3)`
 12. call stack 出現 `setTimeout(() => { console.log(4) }, 0)`
