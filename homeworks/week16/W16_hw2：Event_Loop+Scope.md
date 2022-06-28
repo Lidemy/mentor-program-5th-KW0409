@@ -106,7 +106,7 @@ setTimeout(() => {
 8. 因為是非同步函式，因此 Node.js 會呼叫另外一個 thread 去執行 `setTimeout(() => { console.log(i); }, 0);`
 9. 移除 call stack 中的 `setTimeout(() => { console.log(i); }, 0);`
    (在另外一個 thread 中，`setTimeout(() => { console.log(i); }, 0);` 會在 0 毫秒後到期並將 **`() => { console.log(i) }`** 丟到 callback queue 中開始等待)
-10. (進入第二圈迴圈，此時 i = 1)
+10. (進入第二圈迴圈，此時 i = 1)
 11. call stack 出現 `console.log("i: " + 1);`
 12. 執行 `console.log("i: " + 1);`
 13. 移除 call stack 中的 `console.log("i: " + 1);`
@@ -114,7 +114,7 @@ setTimeout(() => {
 15. 因為是非同步函式，因此 Node.js 會呼叫另外一個 thread 去執行 `setTimeout(() => { console.log(i); }, 1000);`
 16. 移除 call stack 中的 `setTimeout(() => { console.log(i); }, 1000);`
     (在另外一個 thread 中，`setTimeout(() => { console.log(i); }, 1000);` 會在 1000 毫秒後到期並將 **`() => { console.log(i) }`** 丟到 callback queue 中開始等待)
-17. (進入第三圈迴圈，此時 i = 2)
+17. (進入第三圈迴圈，此時 i = 2)
 18. call stack 出現 `console.log("i: " + 2);`
 19. 執行 `console.log("i: " + 2);`
 20. 移除 call stack 中的 `console.log("i: " + 2);`
@@ -122,7 +122,7 @@ setTimeout(() => {
 22. 因為是非同步函式，因此 Node.js 會呼叫另外一個 thread 去執行 `setTimeout(() => { console.log(i); }, 2000);`
 23. 移除 call stack 中的 `setTimeout(() => { console.log(i); }, 2000);`
     (在另外一個 thread 中，`setTimeout(() => { console.log(i); }, 2000);` 會在 2000 毫秒後到期並將 **`() => { console.log(i) }`** 丟到 callback queue 中開始等待)
-24. (進入第四圈迴圈，此時 i = 3)
+24. (進入第四圈迴圈，此時 i = 3)
 25. call stack 出現 `console.log("i: " + 3);`
 26. 執行 `console.log("i: " + 3);`
 27. 移除 call stack 中的 `console.log("i: " + 3);`
@@ -130,7 +130,7 @@ setTimeout(() => {
 29. 因為是非同步函式，因此 Node.js 會呼叫另外一個 thread 去執行 `setTimeout(() => { console.log(i); }, 3000);`
 30. 移除 call stack 中的 `setTimeout(() => { console.log(i); }, 3000);`
     (在另外一個 thread 中，`setTimeout(() => { console.log(i); }, 3000);` 會在 3000 毫秒後到期並將 **`() => { console.log(i) }`** 丟到 callback queue 中開始等待)
-31. (進入第五圈迴圈，此時 i = 4)
+31. (進入第五圈迴圈，此時 i = 4)
 32. call stack 出現 `console.log("i: " + 4);`
 33. 執行 `console.log("i: " + 4);`
 34. 移除 call stack 中的 `console.log("i: " + 4);`
