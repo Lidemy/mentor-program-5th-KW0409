@@ -48,7 +48,7 @@ b.setName("BB");
 console.log("b:", b.getName());
 
 // 輸出結果
-// a: AA
+// a: AA
 // b: BB
 ```
 
@@ -56,39 +56,39 @@ console.log("b:", b.getName());
 
 ```js
 function example(a, b) {
-  console.log('this:',this);
-  console.log('a:', a);
-  console.log('b:', b);
+  console.log("this:", this);
+  console.log("a:", a);
+  console.log("b:", b);
 }
 
 example.call("good", 1, 2);
 
 // 輸出結果
-// this: [String: 'good']
-// a: 1
+// this: [String: 'good']
+// a: 1
 // b: 2
 ```
 
 因此在呼叫一個物件裡的 `this` 時，可以把 function call 用 `call()` 的形式來呼叫，`call()` 的第一個參數就會是呼叫的 function() 前面的值，而第一個參數是什麼，this 的值就會是什麼，例如：
 
 ```js
-"use strict" // 開啟嚴格模式
+"use strict"; // 開啟嚴格模式
 
 const obj = {
   example: {
     a: 123,
     test: function () {
-      console.log(this)
-    }
-  }
-}
+      console.log(this);
+    },
+  },
+};
 
-const func = obj.example.test
-func()
-obj.example.test()
+const func = obj.example.test;
+func();
+obj.example.test();
 
 // 輸出結果
-// func() => undefined
+// func() => undefined
 // 用 call() 來呼叫的話，因為 func() 前面沒有東西，因此會轉換成 func.call()
 // 所以輸出就會是 undefined
 
